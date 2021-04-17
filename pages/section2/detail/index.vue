@@ -3,7 +3,7 @@
     <div class="flex justify-end w-1/2 m-auto">
       <button
         class="bg-blue-300 hover:bg-blue-400 p-2  rounded-md text-white mt-2"
-        @click="$router.push({ path: '/section2/todoList' })"
+        @click="$router.push({ path: '/section2' })"
       >
         戻る
       </button>
@@ -37,7 +37,7 @@ import { Todo } from '@/classes/todo';
 import axios from 'axios';
 
 @Component({
-  name: 'Section2'
+  name: 'Detail'
 })
 export default class extends Vue {
   todo: Todo = new Todo();

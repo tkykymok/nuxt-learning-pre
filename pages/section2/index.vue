@@ -1,19 +1,6 @@
 <template>
-<!-- axios.getのサンプル + 画面遷移サンプル -->
+  <!-- axios.getのサンプル + 画面遷移サンプル -->
   <main class="p-20">
-    <div class="flex m-auto w-1/2 mb-2">
-      <input
-        v-model="inputId"
-        type="text"
-        class="rounded-md  bg-yellow-200 pl-2 mt-2"
-      />
-      <button
-        class="bg-blue-300 hover:bg-blue-400 p-2  rounded-md text-white mt-2"
-        @click="$router.push({ path: `detail?id=${inputId}` })"
-      >
-        送信
-      </button>
-    </div>
 
     <div class="flex justify-center m-auto w-1/2 mb-20">
       <div class="w-full">
@@ -38,7 +25,7 @@
               <td class="border-b border-grey-light">
                 <button
                   class="bg-green-400 p-2"
-                  @click="$router.push({ path: `todoList/${todo.id}` })"
+                  @click="$router.push({ path: `section2/detail/?id=${todo.id}` })"
                 >
                   詳細
                 </button>
@@ -60,8 +47,6 @@ import axios from 'axios';
   name: 'TodoList'
 })
 export default class extends Vue {
-  inputId: number | null = null;
-
   public todoList: Todo[] = [];
 
   created() {}
@@ -73,7 +58,6 @@ export default class extends Vue {
         Object.assign(tmpTodo, todo);
         this.todoList.push(tmpTodo);
       }
-      console.log(this.todoList);
     });
   }
 
