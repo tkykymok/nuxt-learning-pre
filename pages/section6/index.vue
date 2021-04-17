@@ -1,5 +1,5 @@
 <template>
-<!-- asyncData サンプル -->
+  <!-- Vuex Sample -->
   <main class="p-20">
     <div class="flex justify-center m-auto w-1/2 mb-20">
       <div class="w-full">
@@ -24,9 +24,7 @@
               <td class="border-b border-grey-light">
                 <button
                   class="bg-green-400 p-2"
-                  @click="
-                    $router.push({ path: `section2/detail/?id=${todo.id}` })
-                  "
+                  @click="$router.push({ path: `section6/${todo.id}` })"
                 >
                   詳細
                 </button>
@@ -41,20 +39,18 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
-import { NuxtAxiosInstance } from '@nuxtjs/axios'
+import { TodoLotModule } from '~/utils/store-accessor';
+import { Context } from '@nuxt/types';
 
 @Component({
-  name: 'Section5',
-  async asyncData({$axios}: {$axios: NuxtAxiosInstance}) {
-    const {data} = await $axios.get(
-      'https://jsonplaceholder.typicode.com/todos'
-    );
-    return { todoList: data };
+  name: 'Section6',
+  async asyncData() {
+    await TodoLotModule.fetchTodos();
   }
 })
 export default class extends Vue {
-  mounted() {
-    console.log(this.$data.todoList);
+  get todoList() {
+    return TodoLotModule.getTodos;
   }
 }
 </script>
