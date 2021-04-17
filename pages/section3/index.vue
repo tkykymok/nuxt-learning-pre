@@ -1,10 +1,12 @@
 <template>
+<!-- ワタシノキモチ イメージ -->
   <main class="p-20">
     <div class="flex justify-center w-1/2 m-auto">
       <button
         class="bg-blue-300 hover:bg-blue-400 p-2  rounded-md text-white shadow-lg outline-none active:outline-none focus:outline-none"
         @click="toggleModal = !toggleModal"
-      >OPEN MODAL
+      >
+        OPEN MODAL
       </button>
       <div
         class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
@@ -42,37 +44,36 @@
           </div>
         </div>
       </div>
-      <div v-if="toggleModal" class="absolute z-40 inset-0 opacity-25 bg-black"></div>
+      <div
+        v-if="toggleModal"
+        class="absolute z-40 inset-0 opacity-25 bg-black"
+      ></div>
     </div>
   </main>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import { MyFeelings } from '~/classes/myFeelings'
-
+import { Component, Vue } from 'nuxt-property-decorator';
+import { MyFeelings } from '~/classes/myFeelings';
 
 @Component({
-  name: 'Section3',
+  name: 'Section3'
 })
 export default class extends Vue {
-  toggleModal: boolean = false
+  toggleModal: boolean = false;
 
-  register (value: string) {
+  register(value: string) {
     let myFeelings: MyFeelings = new MyFeelings();
-    this.$set(myFeelings, 'userId', '123456')
-    this.$set(myFeelings, 'feelingsCls', value)
-    console.log(JSON.stringify(myFeelings))
-    this.toggleModal = !this.toggleModal
+    this.$set(myFeelings, 'userId', '123456');
+    this.$set(myFeelings, 'feelingsCls', value);
+    console.log(JSON.stringify(myFeelings));
+    this.toggleModal = !this.toggleModal;
   }
-
 }
-
 </script>
 
 <style>
 body {
   background-color: #f8f8ff;
 }
-
 </style>

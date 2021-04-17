@@ -1,4 +1,5 @@
 <template>
+<!-- @Prop, @Emit, @PropSync のサンプル -->
   <main class="p-20">
     <div class="flex justify-center m-auto w-1/2 mb-20 border-2 border-dotted border-black">
       <div class="w-2/3">

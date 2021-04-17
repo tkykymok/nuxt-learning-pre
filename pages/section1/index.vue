@@ -1,4 +1,5 @@
 <template>
+<!--  Vue よく使う基礎構文 -->
   <main class="p-20">
     <div class="flex justify-center m-auto w-1/3 mb-20">
       <div class="w-1/2">

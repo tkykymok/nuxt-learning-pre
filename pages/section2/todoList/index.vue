@@ -1,4 +1,5 @@
 <template>
+<!-- axios.getのサンプル + 画面遷移サンプル -->
   <main class="p-20">
     <div class="flex m-auto w-1/2 mb-2">
       <input
