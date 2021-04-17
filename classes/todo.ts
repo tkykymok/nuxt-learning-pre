@@ -1,9 +1,8 @@
 export class Todo {
   userId: number | null = null;
   id: number | null = null;
-  title: string = '';
+  title: string = "";
   completed: boolean = false;
 
-  constructor () {
-  }
+  constructor() {}
 }

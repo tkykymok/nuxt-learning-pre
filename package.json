@@ -31,5 +31,9 @@
     "eslint": "^7.10.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "nuxt-fontawesome": "^0.4.0"
+  },
+  "prettier": {
+    "singleQuote": true
   }
+
 }
